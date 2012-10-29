@@ -15,21 +15,28 @@ class User < ActiveRecord::Base
   has_secure_password
   attr_accessible :email, :password, :password_confirmation, :role
 
+  before_save :default_role_to_member
 
   has_many :purchases
   has_many :songs, :through => :purchases
 
   validates_uniqueness_of :email
 
-  # def roles
-  #   ROLES = %w[admin member guest]
-  # end
-
-  def role_symbols
-    [role.to_sym]
+  def admin?
+    role? :admin
   end
 
-  def role?(role)
-    roles.include? role.to_s
+  def member?
+    role? :member
+  end
+
+  def role?(symbol)
+    role == symbol.to_s
+  end
+
+  private
+
+  def default_role_to_member
+    role ||= :member
   end
 end

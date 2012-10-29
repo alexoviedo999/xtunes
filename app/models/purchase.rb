@@ -12,7 +12,6 @@
 
 class Purchase < ActiveRecord::Base
   attr_accessible :price, :song_id
-  attr_accessor :name
   belongs_to :user
   belongs_to :song
 
