@@ -11,7 +11,7 @@ class PurchasesController < ApplicationController
 
   def create
     @purchase = Purchase.new(params[:purchase])
-    @purchase.user = User.new(params[:user])
+    @purchases = current_user.purchases
     if @purchase.save
       redirect_to root_path, notice: 'Song was successfully purchased.'
     else
