@@ -1,5 +1,5 @@
 <h2><%= @song.name %></h2> <br />
-<%= form_for(@purchase) do |f| %>
+<%= form_for [@song, @purchase] do |f| %>
   <div class="field">
   <h3>Price: $<%= @song.price %><h3>
   </div>

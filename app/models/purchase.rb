@@ -15,6 +15,6 @@ class Purchase < ActiveRecord::Base
   belongs_to :user
   belongs_to :song
 
-  validates :user, :song, :name, :price, :presence => true
+  validates :user, :song, :price, :presence => true
 
 end

@@ -20,4 +20,5 @@ class Song < ActiveRecord::Base
   has_many :purchases
   has_many :users, :through => :purchases
   mount_uploader :audiofile, AudiofileUploader
+  accepts_nested_attributes_for :purchases
 end
