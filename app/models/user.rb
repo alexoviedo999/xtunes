@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email
 
+  ROLES = %w[admin moderator author]
+
   def admin?
     role? :admin
   end
