@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email
 
-  ROLES = %w[admin moderator author]
+  ROLES = %w[admin member]
 
   def admin?
     role? :admin

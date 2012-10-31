@@ -7,21 +7,17 @@ class PurchasesController < ApplicationController
   end
 
   def new
-    @song = Song.find_by_id(params[:song_id])
+    @song = Song.find(params[:song_id])
     @purchase = Purchase.new
 
   end
 
   def create
-
-    @song = Song.find_by_id(params[:song_id])
-
-    @purchase = @song.purchases.create(params[:purchase])
-
-    @purchase.user = current_user
+    @song = Song.find(params[:song_id])
+    @purchase = current_user.purchases.new(params[:purchases])
+    @purchase.song_id = params[:song_id]
 
     if @purchase.save
-
       redirect_to root_path, notice: 'Song was successfully purchased.'
     else
       render action: "new"
@@ -29,7 +25,7 @@ class PurchasesController < ApplicationController
   end
 
   def show
-    @song = Song.find_by_id(params[:song_id])
+    @song = Song.find(params[:song_id])
   end
 
 end
