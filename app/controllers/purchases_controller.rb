@@ -16,6 +16,7 @@ class PurchasesController < ApplicationController
     @song = Song.find(params[:song_id])
     @purchase = current_user.purchases.new(params[:purchases])
     @purchase.song_id = params[:song_id]
+    @purchase.price = @song.price.to_f
 
     if @purchase.save
       redirect_to root_path, notice: 'Song was successfully purchased.'
@@ -25,7 +26,7 @@ class PurchasesController < ApplicationController
   end
 
   def show
-    @song = Song.find(params[:song_id])
+    @song = Song.all
   end
 
 end
