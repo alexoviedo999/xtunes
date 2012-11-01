@@ -20,40 +20,37 @@
 </head>
 
 <body>
-  <div class="row-fluid">
-    <div class="span12">
-      <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="brand" href="/">xtunes</a>
-            <ul class="right nav">
-              <li><%= link_to 'Home', root_path %></li>
-              <li><%= link_to 'Songs', songs_path %></li>
-              <li><%= link_to "Artists",artists_path %></li>
-              <li><%= link_to "Albums", albums_path %></li>
-              <li><%= link_to "Genres", genres_path %></li>
+<div id="page" class="container">
 
-            <div id="user_header">
-              <% if current_user %>
-                Logged in as <%= current_user.email %>.
-                 <%= link_to "Log Out", logout_path %>
-              <% else %>
-                <%= link_to "Sign Up", signup_path %> or
-                <%= link_to "Log In", login_path %>
-               <% end %>
-            </div>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="/">xtunes</a>
+        <ul class="right nav">
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Songs', songs_path %></li>
+          <li><%= link_to "Artists",artists_path %></li>
+          <li><%= link_to "Albums", albums_path %></li>
+          <li><%= link_to "Genres", genres_path %></li>
 
-            <% flash.each do |name,msg| %>
-              <% content_tag :div, msg, id: "flash_#{name}" %>
-            <% end %>
-            </ul>
-          </div>
+        <div id="user_header">
+          <% if current_user %>
+            Logged in as <%= current_user.email %>.
+             <%= link_to "Log Out", logout_path %>
+          <% else %>
+            <%= link_to "Sign Up", signup_path %> or
+            <%= link_to "Log In", login_path %>
+           <% end %>
         </div>
+
+        <% flash.each do |name,msg| %>
+          <% content_tag :div, msg, id: "flash_#{name}" %>
+        <% end %>
+        </ul>
       </div>
     </div>
+  </div>
 
-
-    <div id="page" class="container">
 
 
     <header class="page-header">
@@ -83,12 +80,12 @@
       </div>
     </div>
 
-    <div id="posts" class="isotope row" style="position: relative; overflow: hidden;">
+    <div id="posts" class="row isotope">
 
       <!-- Posts will go here ... -->
     <% @songs.each do |song| %>
 
-    <div class="post item span4 isotope-item" style="position: absolute; left: 0px; top: 0px;-webkit-transform: translate3d(5px, 5px, 0px); ">
+    <div class="post item span4 isotope-item" >
 
         <div class="well">
           <h4>
@@ -121,8 +118,9 @@
       </div>
     </div>
     <% end %>
-      </div>
-    </div>
+  </div>
+
+  </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
@@ -146,7 +144,7 @@
     </div>
   </div>
 </script>
-</div>
+
 </body>
 </html>
 

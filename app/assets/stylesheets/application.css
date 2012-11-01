@@ -16,6 +16,13 @@
  *= require_self
  */
 
+#posts {
+position: relative;
+overflow: hidden;
+height: 13936px;
+}
 
-
-
+.post item span4 isotope-item {
+position: absolute;
+left: 0px; top: 0px;-webkit-transform: translate3d(0px, 0px, 0px);
+}
