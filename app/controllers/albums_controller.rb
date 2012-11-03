@@ -1,7 +1,8 @@
 class AlbumsController < ApplicationController
 
   def index
-    @albums = Album.all
+    @search = Album.search(params[:q])
+    @albums = @search.result
   end
 
   def new

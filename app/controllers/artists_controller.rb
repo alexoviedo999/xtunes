@@ -1,7 +1,8 @@
 class ArtistsController < ApplicationController
 
   def index
-    @artists = Artist.all
+    @search = Artist.search(params[:q])
+    @artists = @search.result
   end
 
   def new

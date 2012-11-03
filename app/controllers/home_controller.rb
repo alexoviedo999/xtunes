@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
 
   def index
-    @songs = Song.all
+    @search = Song.search(params[:q])
+    @songs = @search.result
+
   end
 
   def about

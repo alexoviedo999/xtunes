@@ -2,8 +2,11 @@ class SongsController < ApplicationController
     load_and_authorize_resource
 
     def index
+      @search = Song.search(params[:q])
+      @songs = @search.result
+
       if admin_user?
-       @songs = Song.all
+      @songs = @search.result
       else
         redirect_to login_path
       end

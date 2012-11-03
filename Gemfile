@@ -9,6 +9,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'jquery-rails'
 gem 'pg'
+gem 'ransack'
 gem 'stripe'
 gem 'thin'
 

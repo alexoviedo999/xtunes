@@ -46,6 +46,15 @@
         <% flash.each do |name,msg| %>
           <% content_tag :div, msg, id: "flash_#{name}" %>
         <% end %>
+
+        <%= search_form_for @search do |f| %>
+          <div class="field">
+            <%=f.label :name_cont, "Search by name" %>
+            <%= f.text_field :name_cont %>
+          </div>
+          <div class="actions"><%= f.submit "Search" %></div>
+          <% end %>
+
         </ul>
       </div>
     </div>

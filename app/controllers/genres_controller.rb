@@ -1,6 +1,7 @@
 class GenresController < ApplicationController
  def index
-    @genres = Genre.all
+    @search = Genre.search(params[:q])
+    @genres = @search.result
   end
 
   def new
