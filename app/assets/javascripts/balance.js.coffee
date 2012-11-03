@@ -7,6 +7,9 @@ balance =
     $('#new_balance').submit ->
       $('input[type=submit]').attr('disabled', true)
       balance.processCard()
+      false
+    else
+      true
 
   processCard: ->
     card =
@@ -18,6 +21,8 @@ balance =
 
   handleStripeResponse: (status, response) ->
     if status == 200
-      alert(response.id)
-    else
-         alert(response.error.message)
+        $('#balance_stripe_card_token').val(response.id)
+        $('#new_balance')[0].submit()
+      else
+        $('#stripe_error').text(response.error.message)
+        $('input[type=submit]').attr('disabled', false)
