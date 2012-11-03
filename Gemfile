@@ -2,14 +2,18 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
+gem "bcrypt-ruby"
+gem 'bootstrap-sass'
+gem "cancan"
 gem 'carrierwave'
 gem 'fog'
 gem 'jquery-rails'
 gem 'pg'
+gem 'stripe'
 gem 'thin'
-gem 'bootstrap-sass'
-gem "bcrypt-ruby"
-gem "cancan"
+
+
+
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

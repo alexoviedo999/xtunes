@@ -24,6 +24,9 @@
 #Ignore procfile
 Procfile
 
+#Ignore Stripe
+stripe.rb
+
 
 #Ignore public/uploads directory
 public/uploads
