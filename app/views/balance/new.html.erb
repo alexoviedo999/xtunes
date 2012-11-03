@@ -1,0 +1,27 @@
+<%= form_for @balance do |f| %>
+  <% if @balance.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@balance.errors.count, "error") %> prohibited this balance from being saved:</h2>
+      <ul>
+      <% @balance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+      <%= label_tag :card_number, "Credit Card Number " %>
+      <%= text_field_tag :card_number, nil, name: nil %>
+  </div>
+  <div class="field">
+      <%= label_tag :card_code, "Security Code on Card (CVV)" %>
+      <%= text_field_tag :card_code, nil, name: nil %>
+  </div>
+  <div class="field">
+    <%= label_tag :card_month, "Card Expiration" %>
+    <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month"}%>
+    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"}%>
+  </div>
+  <div class="actions"><%= f.submit "Subscribe" %></div>
+<% end %>

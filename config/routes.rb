@@ -10,6 +10,9 @@ Xtunes::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "signup" => "users#new", :as => "signup"
 
+  resources :balance
+  # get "balance" => "balance#new", :as => "balance"
+
   resources :users
   resources :sessions
 
