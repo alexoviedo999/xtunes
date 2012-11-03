@@ -5,10 +5,11 @@
 
   </tr>
 
-<% @purchases.each do |purchase| %>
+<% @purchases.each_with_index do |purchase, index| %>
   <tr>
 
     <td><%= purchase.price %></td>
+
     <td><%= link_to 'Show', purchase %></td>
 
     <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
