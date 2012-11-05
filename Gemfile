@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'rails', '3.2.8'
 
@@ -12,9 +13,6 @@ gem 'pg'
 gem 'ransack'
 gem 'stripe'
 gem 'thin'
-
-
-
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -30,4 +28,5 @@ end
 
 group :development do
   gem 'annotate'
+  gem 'taps'
 end
