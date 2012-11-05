@@ -1,0 +1,25 @@
+<%= form_for @mixtape, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <h3>Pick from your songs to make a mix tape</h3>
+    <table>
+      <ul>
+      <% @songs.each do |song| %>
+      <li><%= link_to song.name, song %>
+      <%= check_box_tag "song[]", song, false %></li>
+      <% end %>
+      </ul>
+    </table>
+
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                mixtapes_path, :class => 'btn' %>
+  </div>
+<% end %>
