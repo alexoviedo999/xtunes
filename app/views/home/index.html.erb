@@ -2,100 +2,33 @@
 <html lang="en">
 <head>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <div class="body">
+    <div class="hero-unit">
+     <h1>Xtunes<small> Buy Music Now</small></h1>
+      <div class="description">
+        <p class="lead">
+          <span>The best music </span>
+          <span>at the best price</span>
+        </p>
+      </div>
 
-  <title>Xtunes</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-
-  <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-  <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-  <link href="css/theme.css" rel="stylesheet">
-  <link href="css/theme-responsive.css" rel="stylesheet">
-</head>
-
-<body>
-<div id="page" class="container">
-
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="brand" href="/">xtunes</a>
-        <ul class="right nav">
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Songs', songs_path %></li>
-          <li><%= link_to "Artists",artists_path %></li>
-          <li><%= link_to "Albums", albums_path %></li>
-          <li><%= link_to "Genres", genres_path %></li>
-
-        <div id="user_header">
-          <% if current_user %>
-            Logged in as <%= current_user.email %>.
-             <%= link_to "Log Out", logout_path %>
-          <% else %>
-            <%= link_to "Sign Up", signup_path %> or
-            <%= link_to "Log In", login_path %>
-           <% end %>
-        </div>
-
-        <% flash.each do |name,msg| %>
-          <% content_tag :div, msg, id: "flash_#{name}" %>
-        <% end %>
-
-        <%= search_form_for @search do |f| %>
-          <div class="field">
-            <%=f.label :name_cont, "Search by name" %>
-            <%= f.text_field :name_cont %>
-          </div>
-          <div class="actions"><%= f.submit "Search" %></div>
-          <% end %>
-
-        </ul>
+      <%= search_form_for @search do |f| %>
+      <div class="field">
+        <%=f.label :name_cont, "Search by song name" %>
+        <%= f.text_field :name_cont %>
+      </div>
+      <div class="btn-group">
+      <button class="btn btn-primary"><%= f.submit %>
+      </button>
+      <% end %>
       </div>
     </div>
   </div>
 
-
-
-    <header class="page-header">
-    <h1>Xtunes<small> Buy Music Now</small></h1>
-
-    <div class="description">
-      <p class="lead">
-        <span>The best music </span>
-        <span>at the best price</span>
-      </p>
-    </div>
-
-    <div class="actions">
-      <div class="btn-toolbar">
-        <div class="btn-group">
-          <a id="subreddit" class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-            <span class="subreddit"></span>
-            <span class="caret"></span>
-          </a>
-        </div>
-
-        <div class="btn-group">
-          <a class="btn" href="http://github.com/mpezzi/bootstrap_isotope">
-            Submit
-          </a>
-        </div>
-      </div>
-    </div>
-
     <div id="posts" class="row isotope">
-
       <!-- Posts will go here ... -->
     <% @songs.each do |song| %>
-
-    <div class="post item span4 isotope-item" >
-
+      <div class="post item span4 isotope-item" >
         <div class="well">
           <h4>
           <b>Song:</b>
@@ -120,17 +53,16 @@
           <br>
           <b><%= check_box_tag 'Purchase'%></b>
           </h4>
-        <div class="info">
-        <span class="badge">1988</span>
-        <span class="badge">songs</span>
+          <div class="info">
+          <span class="badge">1988</span>
+          <span class="badge">songs</span>
+          </div>
         </div>
       </div>
-    </div>
     <% end %>
+    </div>
   </div>
-
-  </div>
-
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>

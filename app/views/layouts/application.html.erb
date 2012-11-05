@@ -4,8 +4,54 @@
   <title>Xtunes</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
 
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Xtunes</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
+  <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <link href="css/theme-responsive.css" rel="stylesheet">
 </head>
+
 <body>
+<div id="page" class="container">
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="/">xTunes</a>
+        <ul class="nav">
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Songs', songs_path %></li>
+          <li><%= link_to "Artists",artists_path %></li>
+          <li><%= link_to "Albums", albums_path %></li>
+          <li><%= link_to "Genres", genres_path %></li>
+          <li><%= link_to "Mix tapes", mixtapes_path %></li>
+           </ul>
+          <form class="navbar-search pull-right">
+          <% if current_user %>
+            <%= current_user.email %>.
+             <%= link_to "Log Out", logout_path %>
+          <% else %>
+            <%= link_to "Sign Up", signup_path %> or
+            <%= link_to "Log In", login_path %>
+           <% end %>
+
+          <% flash.each do |name,msg| %>
+            <% content_tag :div, msg, id: "flash_#{name}" %>
+          <% end %>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
 <%= yield %>

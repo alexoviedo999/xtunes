@@ -26,3 +26,17 @@ height: 13936px;
 position: absolute;
 left: 0px; top: 0px;-webkit-transform: translate3d(0px, 0px, 0px);
 }
+
+body {
+  margin-top: 0px;
+  margin-bottom: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+
+}
+
+html {
+     background-image: url('http://1.bp.blogspot.com/-07j3Q76UAxs/UDxEq1NFKCI/AAAAAAAAAG0/ABzIVazbm3g/s1600/small-apartment-interior-design-1.jpg');
+     background-repeat: repeat;
+ }
+
