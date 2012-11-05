@@ -5,6 +5,7 @@ Xtunes::Application.routes.draw do
   resources :albums
   resources :genres
   resources :purchases
+  resources :charges
 
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
@@ -22,6 +23,10 @@ Xtunes::Application.routes.draw do
 
   resources :home do
     get 'song'
+  end
+
+  resources :mixtapes do
+    resources :shares, :only => [:new, :create]
   end
 
   root :to => 'home#index'

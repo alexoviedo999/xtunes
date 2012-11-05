@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
 
   has_many :purchases
   has_many :songs, :through => :purchases
+  has_many :owned_mixtapes, :foreign_key => :owner_id, :class_name => 'Mixtape'
+
+  has_many :user_mixtapes
+  has_many :mixtapes, :through => :user_mixtapes
 
   validates_uniqueness_of :email
 
