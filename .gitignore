@@ -25,7 +25,7 @@
 Procfile
 
 #Ignore Stripe
-stripe.rb
+config/stripe.yml
 
 
 #Ignore public/uploads directory

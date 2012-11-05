@@ -1,8 +1,8 @@
 class BalanceController < ApplicationController
 
   def new
-    @balances = Balance.new(params[:balance])
-    @user = current_user
+    @balance = Balance.new(params[:balance])
+    @user = current_user.users
     # @balance = user.total.build
   end
 
