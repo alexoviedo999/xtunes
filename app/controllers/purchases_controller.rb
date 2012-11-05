@@ -2,7 +2,7 @@ class PurchasesController < ApplicationController
 
   def index
     @purchases = current_user.purchases
-    @song = Song.find_by_id(params[:song_id])
+    @songs = current_user.songs
 
   end
 
