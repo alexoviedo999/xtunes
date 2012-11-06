@@ -13,7 +13,7 @@ class SongsController < ApplicationController
     end
 
     def admin_user?
-      current_user.admin?
+      current_user.try(:admin)
     end
 
     def new
