@@ -140,6 +140,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.6)
     stripe (1.7.6)
       multi_json (~> 1.1)
       rest-client (~> 1.4)
@@ -181,6 +182,7 @@ DEPENDENCIES
   rails (= 3.2.8)
   ransack
   sass-rails (~> 3.2.3)
+  sqlite3
   stripe
   taps
   thin

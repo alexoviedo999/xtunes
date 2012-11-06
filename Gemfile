@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 ruby '1.9.3'
 
 gem 'rails', '3.2.8'
@@ -12,6 +13,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'ransack'
 gem 'stripe'
+gem 'sqlite3'
 gem 'thin'
 
 group :assets do
