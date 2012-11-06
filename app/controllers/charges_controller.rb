@@ -1,14 +1,17 @@
 class ChargesController < ApplicationController
 
+  def index
+    render :new
+  end
   def new
   end
 
   def create
     # Amount in cents
-    @amount = 500
+    @amount = @purchase.price
 
     Stripe::Charge.create(
-      :amount      => @amount,
+      :amount      => (@amount*100),
       :card        => params[:stripeToken],
       :description => "test@test.com",
       :currency    => 'usd'

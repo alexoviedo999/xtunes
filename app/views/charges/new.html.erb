@@ -1,9 +1,9 @@
 <%= form_tag charges_path do %>
-  <article>
+  <h3>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <%= session[:purchase_amount] %>
     </label>
-  </article>
+  </h3>
 
   <script src="https://button.stripe.com/v1/button.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"

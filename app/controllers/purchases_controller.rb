@@ -19,7 +19,9 @@ class PurchasesController < ApplicationController
     @purchase.price = @song.price.to_f
 
     if @purchase.save
-      redirect_to root_path, notice: 'Song was successfully purchased.'
+      session[:purchase_amount] = @purchase.price
+      redirect_to charges_path, notice: 'Song was successfully purchased.'
+
     else
       render action: "new"
     end
