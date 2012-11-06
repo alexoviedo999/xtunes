@@ -4,7 +4,12 @@ class MixtapesController < ApplicationController
   # GET /mixtapes
   # GET /mixtapes.json
   def index
-    @mixtapes = current_user.mixtapes
+    if current_user
+      @mixtapes = current_user.mixtapes
+    else
+      flash.now.alert = "No mixtapes available."
+      redirect_to root_path
+    end
   end
 
   # GET /mixtapes/1
