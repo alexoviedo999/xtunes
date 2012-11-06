@@ -31,11 +31,12 @@ class MixtapesController < ApplicationController
   def create
     @mixtape = Mixtape.new(params[:mixtape])
     @mixtape.owner = current_user
+    @mixtape.save
 
-    params[:songs].each do |index, song_hash|
-      next if song_hash[:audio].blank?
-      @mixtape.songs.build(song_hash)
-    end if params[:songs]
+    params[:song].each do |song_id|
+      # create mixtape_song for each
+      MixtapeSong.create(mixtape_id: @mixtape.id, song_id: song_id) # pass in mixtape id and song id
+    end if params[:song]
 
     respond_to do |format|
       if @mixtape.save

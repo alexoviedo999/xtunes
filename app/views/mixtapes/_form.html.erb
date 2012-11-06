@@ -11,7 +11,7 @@
       <ul>
       <% @songs.each do |song| %>
       <li><%= link_to song.name, song %>
-      <%= check_box_tag "song[]", song, false %></li>
+      <%= check_box_tag "song[]", song.id, false %></li>
       <% end %>
       </ul>
     </table>
