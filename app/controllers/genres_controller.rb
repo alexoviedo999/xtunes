@@ -1,4 +1,6 @@
 class GenresController < ApplicationController
+  load_and_authorize_resource
+
  def index
     @search = Genre.search(params[:q])
     @genres = @search.result

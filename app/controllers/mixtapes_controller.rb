@@ -1,4 +1,5 @@
 class MixtapesController < ApplicationController
+    load_and_authorize_resource
 
   # GET /mixtapes
   # GET /mixtapes.json
