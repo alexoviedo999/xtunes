@@ -13,7 +13,6 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'ransack'
 gem 'stripe'
-gem 'sqlite3'
 gem 'thin'
 
 group :assets do
@@ -30,5 +29,6 @@ end
 
 group :development do
   gem 'annotate'
+  gem 'sqlite3'
   gem 'taps'
 end
