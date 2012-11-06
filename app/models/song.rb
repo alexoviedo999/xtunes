@@ -22,5 +22,6 @@ class Song < ActiveRecord::Base
   has_many :mixtape_songs
   has_many :mixtapes, :through => :mixtape_songs
   mount_uploader :audiofile, AudiofileUploader
+  mount_uploader :photo, AudiofileUploader
   accepts_nested_attributes_for :purchases
 end
