@@ -5,15 +5,11 @@ class SongsController < ApplicationController
       @search = Song.search(params[:q])
       @songs = @search.result
 
-      if admin_user?
-      @songs = @search.result
-      else
-        redirect_to login_path
-      end
+
     end
 
     def admin_user?
-      current_user.try(:admin)
+      current_user.try(:admin?)
     end
 
     def new

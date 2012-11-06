@@ -18,14 +18,17 @@
   <tr>
     <td><%= genre.name %></td>
     <td><%= link_to 'Show', genre %></td>
-
+    <% if can? :edit, @genre %>
     <td><%= link_to 'Edit', edit_genre_path(genre) %></td>
+    <% end %>
+    <% if can? :delete, @genre %>
      <td><%= link_to 'Delete', genre, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    <% end %>
+    </tr>
+    <% end %>
+    </table>
 
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Genre', new_genre_path %>
+    <br />
+    <% if can? :new, @genre %>
+    <%= link_to 'New Genre', new_genre_path %>
+    <% end %>

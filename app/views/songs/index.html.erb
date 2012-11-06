@@ -28,8 +28,12 @@
 
     <td><%= link_to 'Show', song %></td>
 
+    <% if can? :edit, @song %>
     <td><%= link_to 'Edit', edit_song_path(song) %></td>
-     <td><%= link_to 'Delete', song, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    <% end %>
+     <% if can? :delete, @song %>
+    <td><%= link_to 'Delete', song, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    <% end %>
 
   </tr>
 <% end %>
@@ -37,4 +41,6 @@
 
 <br />
 
+<% if can? :new, @song %>
 <%= link_to 'New Song', new_song_path %>
+<% end %>
