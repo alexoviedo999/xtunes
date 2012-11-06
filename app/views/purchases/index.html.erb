@@ -1,23 +1,11 @@
-<h1>Listing Purchases</h1>
-<table>
-  <tr>
-    <th>Purchase Price</th>
-
-  </tr>
-
-<% @purchases.each_with_index do |purchase, index| %>
-  <tr>
-
-    <td><%= purchase.price %></td>
-
-    <td><%= link_to 'Show', purchase %></td>
-
-    <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
-     <td><%= link_to 'Delete', purchase, method: :delete, data: {confirm: 'Are you sure?'} %></td>
-
-  </tr>
+<h1>Your Purchased Songs</h1>
+<% @songs.each do |song| %>
+  <li>
+    <%= song.name %>
+    <br>
+    <%= audio_tag song.audiofile, controls: true %>
+  </li>
 <% end %>
-</table>
 
-<br />
+
 
