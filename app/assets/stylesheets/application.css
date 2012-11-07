@@ -8,35 +8,84 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require 'reset.css'
- *= require 'theme.css'
- *= require 'theme-responsive.css'
- *= require 'bootstrap.css'
- *= require 'bootstrap-responsive.css'
+ *= require reset
+ *= require bootstrap
+ *= require bootstrap-responsive
  *= require_self
  */
 
-#posts {
-position: relative;
-overflow: hidden;
-height: 13936px;
-}
-
-.post item span4 isotope-item {
-position: absolute;
-left: 0px; top: 0px;-webkit-transform: translate3d(0px, 0px, 0px);
-}
 
 body {
   margin-top: 0px;
   margin-bottom: 40px;
   margin-left: 15px;
   margin-right: 15px;
+}
 
+
+h1 {
+  color: #999;
+}
+.hero-unit {
+  color: #999;
+  margin-top: 60px;
 }
 
 html {
-     background-image: url('http://1.bp.blogspot.com/-07j3Q76UAxs/UDxEq1NFKCI/AAAAAAAAAG0/ABzIVazbm3g/s1600/small-apartment-interior-design-1.jpg');
-     background-repeat: repeat;
+     background-image: url('http://static.culturemap.com/site_media/uploads/photos/2012-02-23/rock_band_blurry_1.350w_263h.jpg');
+     background-size: cover;
  }
 
+ body {
+  background-color: transparent;
+ }
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}

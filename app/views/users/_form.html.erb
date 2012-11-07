@@ -1,5 +1,7 @@
-<h1>Sign Up</h1>
+<div class="hero-unit">
 
+<h1>Sign Up</h1>
+<br/>
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -13,16 +15,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
+  <br/>
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
+  <br/>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
-  <div class="actions"><%= f.submit "Subscribe" %></div>
+  <br/>
+  <div class="actions"><%= f.submit "Sign Up" %></div>
   <% end %>
+</div>

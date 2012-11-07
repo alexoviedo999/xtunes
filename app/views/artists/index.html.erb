@@ -1,3 +1,4 @@
+<div class="hero-unit">
 <h1>Listing Artists</h1>
 
   <%= search_form_for @search do |f| %>
@@ -8,12 +9,15 @@
     <div class="actions"><%= f.submit "Search" %></div>
   <% end %>
 
-<table>
+<table class="table table">
+  <thead>
   <tr>
     <th>Name</th>
     <th>Bio</th>
 
   </tr>
+</thead>
+<tbody>
 
 <% @artists.each do |artist| %>
   <tr>
@@ -34,3 +38,6 @@
     <% if can? :new, @artist %>
     <%= link_to 'New Artist', new_artist_path %>
     <% end %>
+</div>
+  </tbody>
+</table>

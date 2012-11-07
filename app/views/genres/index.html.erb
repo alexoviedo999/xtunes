@@ -1,3 +1,4 @@
+<div class="hero-unit">
 <h1>Listing Genres</h1>
 
   <%= search_form_for @search do |f| %>
@@ -8,11 +9,13 @@
     <div class="actions"><%= f.submit "Search" %></div>
   <% end %>
 
-<table>
-  <tr>
+<table class="table table">
+  <thead>
+    <tr>
     <th>Genre</th>
-
-  </tr>
+    </tr>
+  </thead>
+<tbody>
 
 <% @genres.each do |genre| %>
   <tr>
@@ -32,3 +35,6 @@
     <% if can? :new, @genre %>
     <%= link_to 'New Genre', new_genre_path %>
     <% end %>
+</div>
+  </tbody>
+</table>

@@ -1,6 +1,7 @@
+<div class="hero-unit">
 <%- model_class = Mixtape.new.class -%>
 <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-<table class="table table-striped">
+<table class="table table">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
@@ -24,6 +25,7 @@
                       :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
                       :class => 'btn btn-mini btn-danger' %>
         </td>
+  </li>
       </tr>
     <% end %>
   </tbody>
@@ -32,3 +34,4 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_mixtape_path,
             :class => 'btn btn-primary' %>
+</div>

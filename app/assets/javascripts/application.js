@@ -14,8 +14,8 @@
 //= require jquery_ujs
 //= require jquery.isotope.min.js
 //= require bootstrap.js
-//= require script.js
-//= require jquery.ba-hashchange.min.js
 //= require_self
 
-
+$(function(){
+  $('#posts').isotope({ itemSelector: '.post' })
+});
