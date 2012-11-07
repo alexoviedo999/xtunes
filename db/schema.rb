@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121029015707) do
+ActiveRecord::Schema.define(:version => 20121106175122) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -26,8 +26,31 @@ ActiveRecord::Schema.define(:version => 20121029015707) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "balances", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "email"
+    t.string   "stripe_customer_token"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.decimal  "total"
+  end
+
   create_table "genres", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "mixtape_songs", :force => true do |t|
+    t.integer  "mixtape_id"
+    t.integer  "song_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "mixtapes", :force => true do |t|
+    t.string   "name"
+    t.integer  "owner_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -57,6 +80,15 @@ ActiveRecord::Schema.define(:version => 20121029015707) do
     t.string   "artist"
     t.string   "album"
     t.string   "genre"
+    t.string   "photo"
+  end
+
+  create_table "user_mixtapes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "mixtape_id"
+    t.integer  "permission"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -67,6 +99,7 @@ ActiveRecord::Schema.define(:version => 20121029015707) do
     t.string   "password"
     t.string   "password_digest"
     t.string   "role"
+    t.decimal  "balance"
   end
 
 end
