@@ -17,7 +17,7 @@ class MixtapesController < ApplicationController
   def show
     @mixtape = Mixtape.find(params[:id])
     # current_user_can? :listen, @mixtape
-    @songs = current_user.songs
+    @songs = @mixtape.songs
   end
 
   # GET /mixtapes/new
