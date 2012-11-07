@@ -9,6 +9,8 @@
 #  updated_at      :datetime         not null
 #  password        :string(255)
 #  password_digest :string(255)
+#  role            :string(255)
+#  balance         :decimal(, )
 #
 
 class User < ActiveRecord::Base

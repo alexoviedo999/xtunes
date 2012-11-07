@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: mixtapes
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  owner_id   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Mixtape < ActiveRecord::Base
   attr_accessible :name, :owner_id, :user
 

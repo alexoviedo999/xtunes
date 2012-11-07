@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: balances
+#
+#  id                    :integer          not null, primary key
+#  user_id               :integer
+#  email                 :string(255)
+#  stripe_customer_token :string(255)
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  total                 :decimal(, )
+#
+
 class Balance < ActiveRecord::Base
   belongs_to :user
   validates_presence_of :user_id
