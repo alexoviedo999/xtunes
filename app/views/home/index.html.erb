@@ -21,35 +21,42 @@
     </div>
   </div>
 
-    <div id="posts" class="row isotope">
+  <div id="posts" class="row isotope">
     <!-- Posts will go here ... -->
-      <% @songs.each do |song| %>
-      <div class="post span4" >
-        <div class="img">
-        <%= image_tag song.photo %>
-          <div class="well">
-            <h4>
-            <b>Song:</b>
-            <%= song.name %>
-            <br>
-            <b>Artist:</b>
-            <%= song.artist %>
-            <br>
-            <b>Genre:</b>
-            <%= song.genre %>
-            <br>
-            <b>Album:</b>
-            <%= song.album %>
-            <br>
-            <b>Price:</b>
-            <%= song.price %>
-            <br>
-            </h4>
-          </div>
+    <% @songs.each do |song| %>
+    <div class="post span3" >
+      <div class="well">
+        <div class="thumbnail">
+          <%= image_tag song.photo %>
+        </div>
+        <h4>
+        <b>Song:</b>
+        <%= song.name %>
+        <br>
+        <b>Artist:</b>
+        <%= song.artist %>
+        <br>
+        <b>Genre:</b>
+        <%= song.genre %>
+        <br>
+        <b>Album:</b>
+        <%= song.album %>
+        <br>
+        <b>Price:</b>
+        <%= song.price %>
+        <br>
+        <%= link_to "Purchase",new_song_purchase_path(song) %>
+        <br>
+        </h4>
+        <div class="info">
+          <span class="badge">1988</span>
+          <span class="badge">songs</span>
         </div>
       </div>
-    <% end %>
     </div>
+    <% end %>
+  </div>
+
 </body>
 </html>
 
