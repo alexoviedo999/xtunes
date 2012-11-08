@@ -449,7 +449,7 @@
   }
   [class*="span"] {
     float: left;
-    margin-left: 32px;
+    margin-left: 30px;
   }
   .container,
   .navbar-fixed-top .container,
