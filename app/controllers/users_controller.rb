@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
+  before_filter :is_admin?, only: :index
 
 
   def index
+    @users = User.all
+
   end
 
   def new
@@ -29,4 +32,13 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+  #def correct user...
+
+  private
+    def is_admin?
+      if current_user.try(:role) == "admin"
+      else redirect_to root_path
+      end
+    end
 end

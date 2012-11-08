@@ -29,7 +29,15 @@
           <li><%= link_to "Artists",artists_path %></li>
           <li><%= link_to "Albums", albums_path %></li>
           <li><%= link_to "Genres", genres_path %></li>
+
+          <% if can? :purchase, @purchase %>
+          <li><%= link_to "My Songs", purchases_path %></li>
+          <% end %>
           <li><%= link_to "Mix tapes", mixtapes_path %></li>
+          <li><% if current_user.try(:role) == "admin" %></li>
+          <li><%= link_to "Users", users_path %></li>
+            <% else %>
+            <% end %>
            </ul>
           <div class="navbar-search pull-right">
           <% if current_user %>
@@ -48,9 +56,12 @@
     </div>
   </div>
 
-
 <%= yield %>
 <%= javascript_include_tag "application", :media => "all" %>
+<head>
+  <script type="text/javascript" src="/jPlayer/js/jquery.jplayer.playlist.min.js">
+  </script>
+</head>
 </body>
 </html>
 
