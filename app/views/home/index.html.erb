@@ -1,6 +1,8 @@
   <div class="body">
     <div class="hero-unit">
-     <h1>Xtunes<small> Buy Music Now</small></h1>
+       <div class="row-fluid">
+      <div class="bigx"><em><strong>X</em></strong></div>
+     <h1><em><strong>Xtunes</em><strong><small> Buy Music Now</small></h1>
       <div class="description">
         <p class="lead">
           <span>The best music </span>
@@ -14,10 +16,10 @@
         <%= f.text_field :name_cont %>
       </div>
       <div class="btn-group">
-      <button class="btn btn-primary"><%= f.submit %>
-      </button>
+      <%= f.submit :class => 'btn btn-primary btn-large' %>
       <% end %>
       </div>
+
     </div>
   </div>
 

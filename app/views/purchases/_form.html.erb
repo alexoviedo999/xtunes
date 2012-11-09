@@ -1,12 +1,14 @@
 <div class="hero-unit">
+<h1>New Song Purchase</h1>
 <h2><%= @song.name %></h2> <br />
 <%= form_for [@song, @purchase] do |f| %>
   <div class="field">
-  <h3>Price: $<%= @song.price %><h3>
+  <h3>Price: <%= number_to_currency (@song.price) %><h3>
   </div>
   <%= f.hidden_field :song_id %>
+  </br>
   <div class="actions">
-  <%= f.submit %>
+  <%= f.submit :class => 'btn btn-primary btn-large' %>
   </div>
 <% end %>
 </div>
