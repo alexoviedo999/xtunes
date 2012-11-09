@@ -47,7 +47,7 @@
         <%= song.album %>
         <br>
         <b>Price:</b>
-        <%= song.price %>
+        <%= number_to_currency song.price %>
         <br>
         <%= link_to "Purchase",new_song_purchase_path(song) %>
         <br>
