@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  load_and_authorize_resource
 
   private
   def current_user
@@ -9,6 +10,11 @@ class ApplicationController < ActionController::Base
 
   def authorize
   redirect_to login_url, alert: "Not authorized" if current_user.nil?
+  end
+
+  rescue_from CanCan::AccessDenied do |e|
+    flash[:error] = 'Access denied.'
+    redirect_to root_url
   end
 
 end

@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  load_and_authorize_resource
+
 
 
   def index
@@ -22,12 +22,11 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
-
+    @song = Song.find(params[:id])
   end
 
   def edit
     @artist = Artist.find(params[:id])
-
   end
 
   def update

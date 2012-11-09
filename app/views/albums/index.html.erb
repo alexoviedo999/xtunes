@@ -21,17 +21,17 @@
   <tr>
     <td><%= album.name %></td>
     <td><%= link_to 'Show', album %></td>
-    <% if can? :edit, @album %>
+    <% if can? :edit, Album %>
     <td><%= link_to 'Edit', edit_album_path(album) %></td>
     <% end %>
-    <% if can? :delete, @album %>
+    <% if can? :delete, Album %>
      <td><%= link_to 'Delete', album, method: :delete, data: {confirm: 'Are you sure?'} %></td>
     <% end %>
     </tr>
     <% end %>
     </table>
     <br />
-    <% if can? :new, @album %>
+    <% if can? :new, Album %>
     <%= link_to 'New Album', new_album_path %>
     <% end %>
 </div>

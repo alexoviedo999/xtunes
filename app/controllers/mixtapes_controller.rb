@@ -1,5 +1,5 @@
 class MixtapesController < ApplicationController
-    load_and_authorize_resource
+  load_and_authorize_resource
 
   # GET /mixtapes
   # GET /mixtapes.json
@@ -60,6 +60,7 @@ class MixtapesController < ApplicationController
   # GET /mixtapes/1/edit
   def edit
     @mixtape = Mixtape.find(params[:id])
+    @songs = @mixtape.songs
   end
 
   # PUT /mixtapes/1

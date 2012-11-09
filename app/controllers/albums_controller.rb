@@ -1,5 +1,4 @@
 class AlbumsController < ApplicationController
-    load_and_authorize_resource
 
   def index
     @search = Album.search(params[:q])
@@ -41,6 +40,6 @@ class AlbumsController < ApplicationController
   def destroy
     @album = Album.find(params[:id])
     @album.destroy
-    redirect_to album_path
+    redirect_to albums_path
   end
 end
