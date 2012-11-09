@@ -1,14 +1,14 @@
 <div class="hero-unit">
 <%= form_tag charges_path do %>
   <h3>
-    <label class="amount">
-      <%= session[:purchase_amount] %>
-    </label>
+    You will be charged
+    <%= number_to_currency(session[:purchase_amount]) %>
+    for your purchase.
   </h3>
 
   <script src="https://button.stripe.com/v1/button.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"></script>
+          data-description="Song purchase"
+          data-amount="<%= @purchase_price_in_cents %>"></script>
 <% end %>
 </div>
