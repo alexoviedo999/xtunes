@@ -1,10 +1,9 @@
 class SongsController < ApplicationController
-    load_and_authorize_resource
+
 
     def index
       @search = Song.search(params[:q])
       @songs = @search.result
-
 
     end
 
@@ -46,9 +45,9 @@ class SongsController < ApplicationController
 
     def destroy
       @song = Song.find(params[:id])
-      @song.destroy
-
+      if @song.destroy
       redirect_to songs_path
+      end
     end
 
 end

@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
-    load_and_authorize_resource
+  load_and_authorize_resource
+
 
   def index
     @search = Artist.search(params[:q])
@@ -40,7 +41,10 @@ class ArtistsController < ApplicationController
 
   def destroy
     @artist = Artist.find(params[:id])
-    @artist.destroy
-    redirect_to artists_path
+    if @artist.destroy
+      render :show
+    else
+      render :root
+    end
   end
 end
