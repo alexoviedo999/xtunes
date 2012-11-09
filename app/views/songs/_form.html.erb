@@ -1,33 +1,41 @@
-
+<div class="hero-unit">
 <%= form_for(@song) do |f| %>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+  <br />
   <div class="field">
-    <%= f.label :price %><br />
+    <%= f.label :price %>
     <%= f.text_field :price %>
   </div>
+  <br />
   <div class="field">
-  <%= f.label :artist %><br />
+  <%= f.label :artist %>
   <%= f.select :artist, Artist.all.map { |a| [a.name] } %>
+  <br />
   <div class="field">
-  <%= f.label :album %><br />
+  <%= f.label :album %>
   <%= f.select :album, Album.all.map { |a| [a.name] } %>
   </div>
+  <br />
   <div class="field">
-  <%= f.label :genre %><br />
+  <%= f.label :genre %>
   <%= f.select :genre, Genre.all.map { |a| [a.name] } %>
   </div>
+  <br />
   <div class="field">
-    <%= f.label :audiofile %><br />
+    <%= f.label :audiofile %>
     <%= f.file_field :audiofile %>
   </div>
+  <br />
   <div class="field">
-    <%= f.label :photo %><br />
+    <%= f.label :photo %>
     <%= f.file_field :photo %>
   </div>
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

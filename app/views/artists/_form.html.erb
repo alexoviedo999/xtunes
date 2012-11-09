@@ -1,13 +1,16 @@
+<div class="hero-unit">
 <%= form_for(@artist) do |f| %>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+  <br />
   <div class="field">
-    <%= f.label :bio %><br />
+    <%= f.label :bio %>
     <%= f.text_field :bio %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

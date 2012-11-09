@@ -1,13 +1,15 @@
   <div class="body">
     <div class="hero-unit">
-       <div class="row-fluid">
-      <div class="bigx"><em><strong>X</em></strong></div>
+       <div class="row">
+      <div class="bigx"><em><strong>Xtunes</em></strong></div>
+      <div>
      <h1><em><strong>Xtunes</em><strong><small> Buy Music Now</small></h1>
       <div class="description">
         <p class="lead">
           <span>The best music </span>
           <span>at the best price</span>
         </p>
+      </div>
       </div>
 
       <%= search_form_for @search do |f| %>
@@ -50,10 +52,7 @@
         <%= link_to "Purchase",new_song_purchase_path(song) %>
         <br>
         </h4>
-        <div class="info">
-          <span class="badge">1988</span>
-          <span class="badge">songs</span>
-        </div>
+
       </div>
     </div>
     <% end %>
