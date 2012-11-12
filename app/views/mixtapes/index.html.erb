@@ -15,7 +15,7 @@
         <td><%= link_to mixtape.name, mixtape %></td>
         <td><%=l mixtape.created_at %></td>
         <td>
-          <%= link_to t('.show', :default => t("helpers.links.edit")),
+          <%= link_to t('.show', :default => t("helpers.links.show")),
                       mixtape, :class => 'btn btn-mini' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_mixtape_path(mixtape), :class => 'btn btn-mini' %>
