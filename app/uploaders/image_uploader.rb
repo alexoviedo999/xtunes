@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class AudiofileUploader < CarrierWave::Uploader::Base
+class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -11,11 +11,8 @@ class AudiofileUploader < CarrierWave::Uploader::Base
   # include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
-
+  #storage :file
   storage :fog
-
-  include CarrierWave::MimeTypes
-  process :set_content_type
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

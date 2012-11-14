@@ -15,7 +15,7 @@
 #
 
 class Song < ActiveRecord::Base
-  attr_accessible :name, :artist, :price, :audiofile, :album, :genre, :photo
+  attr_accessible :name, :artist, :price, :audiofile, :album, :genre, :photo, :remote_audiofile_url, :remote_photo_url
   has_and_belongs_to_many :artists
   has_and_belongs_to_many :genres
   has_many :purchases
@@ -23,6 +23,6 @@ class Song < ActiveRecord::Base
   has_many :mixtape_songs
   has_many :mixtapes, :through => :mixtape_songs
   mount_uploader :audiofile, AudiofileUploader
-  mount_uploader :photo, AudiofileUploader
+  mount_uploader :photo, ImageUploader
   accepts_nested_attributes_for :purchases
 end
