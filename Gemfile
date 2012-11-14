@@ -8,10 +8,12 @@ gem "bcrypt-ruby"
 gem 'bootstrap-sass'
 gem "cancan"
 gem 'carrierwave'
+gem 'carrierwave_direct'
 gem 'fog'
 gem 'jquery-rails'
 gem 'pg'
 gem 'ransack'
+gem 'sidekiq'
 gem 'stripe'
 gem 'thin'
 
