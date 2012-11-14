@@ -1,17 +1,11 @@
 @media (max-width: 480px) {
 
 .bigx {
-
     color: transparent;
-
   }
-
 }
 
 @media (max-width: 1768px) {
-  /*header h1 small*/ {
-
-  }
 
   header div.description {
     padding-top: 9px;
@@ -35,10 +29,7 @@
 @media (min-width: 480px) and (max-width: 768px) {
 
   .bigx {
-
     color: transparent;
-
-
   }
 }
 
@@ -49,9 +40,7 @@
   }
 
   .bigx {
-
     color: transparent;
-
   }
 }
 
@@ -60,6 +49,7 @@
 }
 
 @media (min-width: 1200px) {
-.span3
+.span3 {
 
+  }
 }
